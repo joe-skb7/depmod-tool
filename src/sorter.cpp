@@ -1,3 +1,5 @@
+// TODO: Rewrite the whole file using "topological sort" algorithm
+
 #include <iostream>
 #include "sorter.h"
 
