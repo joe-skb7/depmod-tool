@@ -33,8 +33,8 @@ bool Sorter::sort()
 		}
 
 		if (curLevel.empty()) {
-			cerr << "*** Error: fatal error in algorithm" << endl;
-			cerr << "File: " << __FILE__ << "; line: " << __LINE__;
+			cerr << "*** Error: fatal error in algorithm; "
+			     << "circular dependency found?" << endl;
 			return false;
 		}
 		m_tree.push_back(curLevel);
