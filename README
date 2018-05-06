@@ -1,0 +1,38 @@
+Console tool for finding the correct order of kernel modules loading by
+modules dependency list.
+
+
+Build and install
+~~~~~~~~~~~~~~~~~
+
+    $ rm -rf build
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make
+    $ make install
+    $ cd ..
+
+
+Usage
+~~~~~
+
+Create "input.txt" file, which contains kernel modules with dependencies, in
+next format:
+
+    a: c
+    b: c,d,a
+    c:
+    d: a
+
+Then just run the tool:
+
+    $ ./depmod
+
+and "output.txt" file will be generated, showing how modules must be loaded
+to meet all dependencies. For example above it will contain:
+
+    c
+    a
+    d
+    b
